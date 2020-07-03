@@ -42,6 +42,7 @@
 
 html {
   font-family: sans-serif;
+  scroll-behavior: smooth;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -8034,7 +8035,7 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 14px;
-  background: #132238;
+  background: #1d1c1c;
   padding: 6em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
