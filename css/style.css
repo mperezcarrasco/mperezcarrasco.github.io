@@ -78,7 +78,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
   margin-bottom: 0.5rem; }
 
-p {
+p { 
+  color: #7e898b;
   margin-top: 0;
   margin-bottom: 1rem; }
 
@@ -104,7 +105,7 @@ dl {
 ol ol,
 ul ul,
 ol ul,
-ul ol {
+ul ol {;
   margin-bottom: 0; }
 
 dt {
@@ -482,6 +483,7 @@ pre {
   margin-left: auto; }
 
 .row {
+  color:#7e898b;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8036,7 +8038,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 14px;
   background: #1d1c1c;
-  padding: 6em 0; }
+  padding: 2em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
     letter-spacing: .1em; }
@@ -8045,7 +8047,7 @@ textarea.form-control {
     margin-bottom: 40px;
     font-size: 17px;
     font-weight: 700;
-    letter-spacing: 1px; }
+    letter-spacing: 0.5px; }
   .ftco-footer .ftco-footer-widget ul li a span {
     color: #fff; }
   .ftco-footer .ftco-footer-widget .btn-primary {
