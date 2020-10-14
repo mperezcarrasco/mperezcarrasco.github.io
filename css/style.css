@@ -79,9 +79,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem; }
 
 p { 
-  color: #7e898b;
+  color: #333636;
   margin-top: 0;
   margin-bottom: 1rem; }
+
 
 abbr[title],
 abbr[data-original-title] {
@@ -188,7 +189,7 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #6c757d;
+  color: #333636;
   text-align: left;
   caption-side: bottom; }
 
@@ -392,7 +393,7 @@ mark,
 .blockquote-footer {
   display: block;
   font-size: 80%;
-  color: #6c757d; }
+  color: #333636; }
   .blockquote-footer::before {
     content: "\2014 \00A0"; }
 
@@ -483,7 +484,7 @@ pre {
   margin-left: auto; }
 
 .row {
-  color:#7e898b;
+  color:#333636;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8544,3 +8545,11 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
+
+a {
+  color: #ad5492;
+}
+
+a:hover {
+  color: rgb(119, 34, 119);
+}
