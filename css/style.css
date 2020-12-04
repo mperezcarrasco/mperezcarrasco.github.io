@@ -8554,3 +8554,7 @@ a:hover {
   color: rgb(119, 34, 119);
   text-decoration: underline
 }
+
+a:visited {
+  color: rgb(119, 34, 119);
+}
