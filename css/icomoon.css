@@ -4917,3 +4917,51 @@
 .icon-zoom_out_map:before {
   content: "\e56b";
 }
+
+.icon-da {
+  background-image: url("icons/da.png");
+  background-size: cover;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+.icon-galaxy {
+  background-image: url("icons/galaxy.png");
+  background-size: cover;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+.icon-lsst {
+  background-image: url("icons/lsst.png");
+  background-size: cover;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+.icon-running {
+  background-image: url("icons/running.png");
+  background-size: cover;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+.icon-drowsiness {
+  background-image: url("icons/drowsiness.png");
+  background-size: cover;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}
+
+.icon-tree2 {
+  background-image: url("icons/tree.png");
+  background-size: cover;
+  display: inline-block;
+  height: 80px;
+  width: 80px;
+}

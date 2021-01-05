@@ -65,15 +65,37 @@
 			  
 			<section class="ftco-section">
 				<div class="container">
-					<div class="row">
+					<div class="row no-gutters">
 							  <div id="uds" class="col-md-11">
-								  <div class="blog-entry ftco-animate">
 									  <div class="text pt-2 mt-3">
 								<span class="category mb-1 d-block"><a href="http://uds.udec.cl/" target="_blank">@UDS</a></a></span>
 								<h3 class="mb-4">Unidad de Data Science (UDS), UdeC.</a></h3>
 								<p align="justify">While I was doing my graduate research thesis, my advisor Professor invited me to participate in a project for ARAUCO Company, which consisted on counting and segmenting trees using georeferenced high-resolution images. As I really like challenging problems, I accepted immediately.</p>
 								<p align="justify">The project progressed quickly, and satisfactory results were achieved in a short period of time. After that, ARAUCO signed a one-year service contract and the UDS was founded as a spin-off of the school of Engineering of the University of Concepción.</p>
-								<p align="justify">In the foundation period, I was living in Boston, so when I returned, I was pleased to meet the amazing new people that had joined UDS team. We resumed ARAUCO’s project, this time, with even more challenges: the development of a labeling, training, and predicting platform to count, detect, and segment trees using high-dimensional georeferenced images of forests taken from drone cameras, through cloud-based infrastructure (<a href="index.html#deephub">details</a>). </p>
+								<p align="justify">In the foundation period, I was living in Boston, so when I returned, I was pleased to meet the amazing new people that had joined UDS team. We resumed ARAUCO’s project, this time, with even more challenges: the development of a labeling, training, and predicting platform to count, detect, and segment trees using high-dimensional georeferenced images of forests taken from drone cameras, through cloud-based infrastructure.
+
+								<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModaltree" >details</button>     
+								<div class="modal fade" id="myModaltree" tabindex="-1" role="dialog" aria-labelledby="myModaltree">
+									<div class="modal-dialog modal-lg" role="document">
+									  <div class="modal-content">
+										<div class="modal-body">
+											<img src="images/deephub.png" class="img-fluid" width="1000" height="200">
+											<div class="text pt-2 mt-3">
+										  <span class="category mb-1 d-block"><strong>@ARAUCO Company</strong></a></span>
+										  <h3 class="mb-4">ARAUCO Deep-Hub</a></h3>
+										  <p align="justify">The wood industry is one of the most important economical sectors in Chile, representing almost one sixth of total exports, placing it as the second-largest export sector of the country. In this context, ARAUCO is one of the bigger wood companies in South America, and an important competitor	globally. 
+											For this sector, the information about the number of trees in a field is essential because it helps to estimate productivity, evaluate the density of the plantations, and detect errors occurring during the seedling process, opening the possibility for efficient replanting.
+											<br>ARAUCO Deep-Hub is a software that uses Cloud Infrastructure and Deep Learning algorithms for labeling, training, and predicting statistics using high-dimensional RGB georeferenced images from high-resolution drone cameras. For this project I designed and implemented Deep Learning algorithms that solve the aforementioned problems. I developed two algorithms based on state-of-the-art works. One was <a href="https://arxiv.org/abs/1804.02767" target="_blank">YOLOv3</a>, a famous algorithm for real-time object detection in images that allow us to detect trees and therefore count them. The second algorithm was <a href="https://arxiv.org/abs/1703.06870" target="_blank">Mask RCNN</a>, an instance-segmentation algorithm, which detect trees and segmentate them at the same time, allowing us to estimate the density of the plantations. Also, I designed the required algorithms that works as an interface between the deep learning algoritms and high-dimensional data. Our approach presents a low-cost solution, in contrast to expensive multispectral, hyperspectral, and LiDAR-based solutions. This project was the winner of the innovation challenge of ARAUCO Company.
+										  </div>
+										</div>
+										<div class="modal-footer">
+										  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+										</div>
+									  </div>
+									</div>
+								  </div>
+
+								  
 								<p align="justify">When the project was successfully completed, I moved to other interesting research <a href="index.html">projects</a> within UDS.</p>
 								<h4 class="mb-4">What is UDS?</a></h4>
 								<p align="justify">Is a spin-off of the school of Engineering of UdeC, focused on processing, modeling, and analysing data in order to provide specialized and innovative solutions to companies’ problems. The main goal is to bridge the gap between academy and industry and to create products that help companies with their decision-making process.</p>
@@ -104,7 +126,6 @@
 								</div>
 							  </div>
 								  </div>
-							  </div>
 
 			</section>
 
