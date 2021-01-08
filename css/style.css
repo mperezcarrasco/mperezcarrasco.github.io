@@ -4460,6 +4460,7 @@ button.close {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #030303;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -8038,8 +8039,8 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 14px;
-  background: #1d1c1c;
-  padding: 2em 0; }
+  background: #000000;
+  padding: 0.25em 0; }
   .ftco-footer .ftco-footer-logo {
     text-transform: uppercase;
     letter-spacing: .1em; }
