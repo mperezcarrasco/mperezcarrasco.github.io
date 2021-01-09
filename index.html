@@ -114,11 +114,10 @@
 						</div>
 						<div class="col-md-4 text-center">
 							<button type="button" class="btn btn-light waves-effect" data-toggle="modal" data-target="#myModaldrow">
-								<img src="images/drowsiness.jpg" width="250" class="img-fluid ">
+								<img src="images/device.jpg" width="250" class="img-fluid ">
 									<div class="overlay"></div>
 									<div class="text text-center">
-										<h3>EEG-based Drowsiness 
-										<br>Detector</h3>
+										<h3>Wearables </h3>
 										<span>@Biomedical Lab, UdeC</span>
 									</div>
 								</a>
@@ -134,6 +133,11 @@
 								  <p align="justify">Drowsy driving is a major problem in road safety. This issue is responsible for a huge number of crashes, injuries, and deaths along the world.
 									<br>Working at the Biomedical Laboratory of UdeC, I was responsible for implementing a machine learning system for drowsiness detection using electroencephalography (EEG) signals extracted from a 16-channels g.Nautilus EEG headset. I faced some challenges, such as the need for a reduced number of channels to consider the ergonomic nature of the system, the high cost of the signal labeling process, and the need for real-time detection. Thereby, we are implemented a transfer learning algorithm that learns from vast annotated public sources and uses that knowledge to improve the performance of our low annotated signals. Thus, we efficiently reduced the number of channels, while maintaining the same labeling efforts. Moreover, the system is running almost in real-time!
 									<br>This project was funded by the "Fund for the Promotion of Scientific and Technological Development" (FONDEF).
+									<br>
+									<br>
+									<h3 class="mb-4"><strong>New!</strong> Gait Phases Segmentation Algorithm for a Mobile Application</a></h3>
+									<p align="justify">More information soon!</p>
+
 								  </div>
 							</div>
 	
@@ -145,6 +149,44 @@
 							  </div>
 						</div>
 
+						<div class="col-md-4 text-center">
+
+							<button type="button" class="btn btn-light waves-default" data-toggle="modal" data-target="#myModalda">
+								<img src="images/da.jpg" width="250" class="img-fluid ">
+									<div class="overlay"></div>
+									<div class="text text-center">
+										<h3>Domain Adaptation</h3>
+										<span>@Udec/Harvard U.</span>
+									</div>
+								</a>
+							</button>
+							<div class="modal fade" id="myModalda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog modal-lg" role="document">
+								  <div class="modal-content">
+									<div class="modal-body">
+											<img src="images/AVDA.jpg" alt="" class="img-fluid">
+											<div class="text pt-2 mt-3">
+									  <span class="category mb-1 d-block"><strong>@UdeC/Harvard U. - (2018/2 - 2019/1)</strong></a></span>
+									  <h3 class="mb-4">Semi-supervised Domain Adaptation for Image Classification Through Generative Models</a></h3>
+									  <p align="justify">Deep learning models have demonstrated to be very good at discovering underlying patterns in the data. But for these models works correctly it is usually needed a large amount of annotated data in order to avoid the overfitting and be able to generalize over new data. Unfortunately, in real-life cases, labeling data is costly and time-consuming. Domain adaptation models aim at generalizing a model trained in a vast annotated source to perform well in a low annotated target by finding a common-shared representation between them.
+										<br>I started this project as my master thesis adviced by <a href="http://www.inf.udec.cl/~guille/" target="_blank">Guillermo Cabrera</a>, and <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas" target="_blank">Pavlos Protopapas</a>. I tackled the problem through semi-supervised learning and generative models, and our model has become the state-of-the-art in low-dimensional benchmarks (please refer to my <a href="https://www.youtube.com/watch?v=se5B7w-Tfco">Astroinformatics2019’s</a> talk for more information).
+										<br>At this moment I am working on extending the model to a more complex high dimensional scenario. The final goal is to create a robust domain adaptation model that mixes labeled and unlabeled data with generative models to tackle the overfitting produced when models are trained using low amount of labeled data.
+										<br><a href="https://arxiv.org/abs/1909.11651" target="_blank">[Preprint]</a> Repository will be released soon.
+									</div>
+										<div class="text pt-2 mt-3">
+										<span class="category mb-1 d-block"><strong>@UdeC/Harvard U. - (2020/2 - Present)</strong></a></span>
+										<h3 class="mb-4"><strong>New!</strong> Semi-supervised domain adaptation using Contrastive Lerning</a></h3>
+										<p align="justify">More information soon!</p>
+									  </div>
+							</div>
+	
+									<div class="modal-footer">
+									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								  </div>
+								</div>
+						</div>
+					</div>
 
 						<div class="col-md-4 text-center">
 
@@ -179,51 +221,12 @@
 									</div>
 								  </div>
 							</div>
-
-						<div class="col-md-4 text-center">
-
-							<button type="button" class="btn btn-light waves-default" data-toggle="modal" data-target="#myModalda">
-								<img src="images/da.jpg" width="250" class="img-fluid ">
-									<div class="overlay"></div>
-									<div class="text text-center">
-										<h3>Domain Adaptation</h3>
-										<span>@Udec/Harvard U.</span>
-									</div>
-								</a>
-							</button>
-							<div class="modal fade" id="myModalda" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-								<div class="modal-dialog modal-lg" role="document">
-								  <div class="modal-content">
-									<div class="modal-body">
-											<img src="images/AVDA.jpg" alt="" class="img-fluid">
-											<div class="text pt-2 mt-3">
-									  <span class="category mb-1 d-block"><strong>@UdeC/Harvard U. - (2018/2 - 2019/1)</strong></a></span>
-									  <h3 class="mb-4">Semi-supervised Domain Adaptation for Image Classification Through Generative Models</a></h3>
-									  <p align="justify">Deep learning models have demonstrated to be very good at discovering underlying patterns in the data. But for these models works correctly it is usually needed a large amount of annotated data in order to avoid the overfitting and be able to generalize over new data. Unfortunately, in real-life cases, labeling data is costly and time-consuming. Domain adaptation models aim at generalizing a model trained in a vast annotated source to perform well in a low annotated target by finding a common-shared representation between them.
-										<br>I started this project as my master thesis adviced by <a href="http://www.inf.udec.cl/~guille/" target="_blank">Guillermo Cabrera</a>, and <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas" target="_blank">Pavlos Protopapas</a>. I tackled the problem through semi-supervised learning and generative models, and our model has become the state-of-the-art in low-dimensional benchmarks (please refer to my <a href="https://www.youtube.com/watch?v=se5B7w-Tfco">Astroinformatics2019’s</a> talk for more information).
-										<br>At this moment I am working on extending the model to a more complex high dimensional scenario. The final goal is to create a robust domain adaptation model that mixes labeled and unlabeled data with generative models to tackle the overfitting produced when models are trained using low amount of labeled data.
-										<br><a href="https://arxiv.org/abs/1909.11651" target="_blank">[Preprint]</a> Repository will be released soon.
-									</div>
-										<div class="text pt-2 mt-3">
-										<span class="category mb-1 d-block"><strong>@UdeC/Harvard U. - (2020/2 - Present)</strong></a></span>
-										<h3 class="mb-4">NEW! Semi-supervised domain adaptation using Contrastive Lerning</a></h3>
-										<p align="justify">More information soon!</p>
-									  </div>
-							</div>
-	
-									<div class="modal-footer">
-									  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-									</div>
-								  </div>
-								</div>
-						</div>
-					</div>
 			
 
 
 						<div class="col-md-4 text-center">
 							<button type="button" class="btn btn-light" data-toggle="modal" data-target="#myModalgalaxy">
-									<img src="images/galaxy.jpg" width="250" class="img-fluid ">
+									<img src="images/nasa.jpg" width="250" class="img-fluid ">
 									<div class="overlay"></div>
 									<div class="text text-center">
 										<h3>Galaxy Morphologies</h3>
