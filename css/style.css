@@ -7859,9 +7859,9 @@ h1, h2, h3, h4, h5,
         height: 10px;
         margin: 5px;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4); }
+        background: rgb(0, 0, 0); }
         .owl-carousel.home-slider .owl-dots .owl-dot.active {
-          background: #fff; }
+          background: rgba(173, 5, 195, 0.4); }
 
 .btn {
   cursor: pointer;
