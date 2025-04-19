@@ -262,7 +262,7 @@
       <!-- Main Content -->
       <div id="main-content" class="col-lg-9 px-0">
         <!-- Hero Section -->
-        <section class="hero-section" style="background-image: url('images/wallpaper.png');">
+        <section class="hero-section" style="background-image: url('images/wallpaper4.png');">
           <div class="container">
             <div class="hero-content">
               <img src="images/author.jpeg" alt="Manuel Pérez Carrasco" class="profile-img img-fluid">
@@ -282,6 +282,36 @@
             <h2 class="text-center mb-5">Projects</h2>
             
             <div class="row g-4">
+
+              <!-- Project 6: Methane Detection -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/methanesat.jpg" alt="Methane Detection" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Methane Detection</h4>
+                    <p class="mb-0">@Harvard CfA / EDF</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalMethane">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 3: DeepHub -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/arauco-predio.png" alt="DeepHub" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>DeepHub</h4>
+                    <p class="mb-0">@UdeC/ARAUCO</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDeepHub">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+
               <!-- Project 1: Domain Adaptation -->
               <div class="col-md-6 col-lg-4">
                 <div class="project-card">
@@ -310,20 +340,6 @@
                 </div>
               </div>
               
-              <!-- Project 3: DeepHub -->
-              <div class="col-md-6 col-lg-4">
-                <div class="project-card">
-                  <img src="images/arauco-predio.png" alt="DeepHub" class="img-fluid w-100 project-img">
-                  <div class="project-overlay">
-                    <h4>DeepHub</h4>
-                    <p class="mb-0">@UdeC/ARAUCO</p>
-                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDeepHub">
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-              </div>
-              
               <!-- Project 4: Galaxy Morphologies -->
               <div class="col-md-6 col-lg-4">
                 <div class="project-card">
@@ -338,7 +354,23 @@
                 </div>
               </div>
               
-              <!-- Project 5: Chilean Constitution -->
+              <!-- Project 5: Predictive Maintenance -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/predictive_mantainance.png" alt="Predictive Maintenance" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Predictive Maintenance</h4>
+                    <p class="mb-0">@CMPC</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalPredictive">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+
+              
+              <!-- Project 7: Chilean Constitution -->
               <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                   <img src="images/constitucion.jpeg" alt="Chilean Constitution" class="img-fluid w-100 project-img">
@@ -352,7 +384,7 @@
                 </div>
               </div>
               
-              <!-- Project 6: Wearables -->
+              <!-- Project 8: Wearables -->
               <div class="col-md-6 col-lg-4">
                 <div class="project-card">
                   <img src="images/device.jpg" alt="Wearables" class="img-fluid w-100 project-img">
@@ -503,108 +535,175 @@
     </div>
   </div>
 
-  <!-- Galaxy Morphologies Modal -->
-  <div class="modal fade project-modal" id="modalGalaxy" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-          
-          <h3 class="modal-title mb-4">Galaxy Morphologies</h3>
-          <img src="images/galaxies.jpg" alt="Galaxy Morphologies" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
-          
-          <div>
-            <span class="badge bg-primary mb-2">@UdeC/Harvard U. (2017/2 - 2018/1)</span>
-            <h4>Undergrad Thesis: Attributes Transfer in Deep Neural Network Applied to Astronomical Images</h4>
-            <p class="text-justify">
-              The galaxy evolution through time is one of the key questions of modern astrophysics and the study of their morphologies represents a fundamental and powerful diagnosis to evolutionary changes of galaxies.
-              <br><br>
-              Thus, advised by <a href="http://www.inf.udec.cl/~guille/" target="_blank">Guillermo Cabrera</a>, during my undergraduated honor research thesis <a href="http://astro.inf.udec.cl/" target="_blank">we</a> created a new catalog of galaxy morphologies for "Cluster Lensing and Supernova survey with Hubble (CLASH)" using deep neural networks.
-              <br><br>
-              One of the problem of this approach is the data required a lot of time of expert astronomers to be labeled. Fortunately sometimes it is possible to find similar or related other sources available and we can take advantage of them to make our few labeled target data performs better. For this project, we took advantage of a vast labeled source named "The Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey (CANDELS)" consisting of images associated with 5 different galaxy morphologies labeled by expert using visual inspection. We used the same taxonomy and created a few eyeball labels. As in some cases there exist disagreement between expert opinions, we handled as regression problem. Moreover, we used different deep learning architectures and a transfer learning technique named fine-tuning, to finally show the effectiveness of this method. Finally, we released a public <a href="https://github.com/mperezcarrasco/CLASH/blob/master/Deep-CLASH.csv" target="_blank">Catalog</a> of 8,412 galaxies in 25 different photometrics filters from CLASH.
-            </p>
-            <div class="mt-3">
-              <a href="https://iopscience.iop.org/article/10.1088/1538-3873/aaeeb4" target="_blank" class="btn btn-outline-primary me-2">Paper</a>
-              <a href="https://github.com/mperezcarrasco/CLASH" target="_blank" class="btn btn-outline-dark me-2">Repository</a>
-              <a href="bib/clash.bib" download="clash.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
-            </div>
+<!-- Galaxy Morphologies Modal -->
+<div class="modal fade project-modal" id="modalGalaxy" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <h3 class="modal-title mb-4">Galaxy Morphologies</h3>
+        <img src="images/galaxies.jpg" alt="Galaxy Morphologies" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+        
+        <div>
+          <span class="badge bg-primary mb-2">@UdeC/Harvard U. (2017/2 - 2018/1)</span>
+          <h4>Undergrad Thesis: Attributes Transfer in Deep Neural Network Applied to Astronomical Images</h4>
+          <p class="text-justify">
+            The galaxy evolution through time is one of the key questions of modern astrophysics and the study of their morphologies represents a fundamental and powerful diagnosis to evolutionary changes of galaxies.
+            <br><br>
+            Thus, advised by <a href="http://www.inf.udec.cl/~guille/" target="_blank">Guillermo Cabrera</a>, during my undergraduated honor research thesis <a href="http://astro.inf.udec.cl/" target="_blank">we</a> created a new catalog of galaxy morphologies for "Cluster Lensing and Supernova survey with Hubble (CLASH)" using deep neural networks.
+            <br><br>
+            One of the problem of this approach is the data required a lot of time of expert astronomers to be labeled. Fortunately sometimes it is possible to find similar or related other sources available and we can take advantage of them to make our few labeled target data performs better. For this project, we took advantage of a vast labeled source named "The Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey (CANDELS)" consisting of images associated with 5 different galaxy morphologies labeled by expert using visual inspection. We used the same taxonomy and created a few eyeball labels. As in some cases there exist disagreement between expert opinions, we handled as regression problem. Moreover, we used different deep learning architectures and a transfer learning technique named fine-tuning, to finally show the effectiveness of this method. Finally, we released a public <a href="https://github.com/mperezcarrasco/CLASH/blob/master/Deep-CLASH.csv" target="_blank">Catalog</a> of 8,412 galaxies in 25 different photometrics filters from CLASH.
+          </p>
+          <div class="mt-3">
+            <a href="https://iopscience.iop.org/article/10.1088/1538-3873/aaeeb4" target="_blank" class="btn btn-outline-primary me-2">Paper</a>
+            <a href="https://github.com/mperezcarrasco/CLASH" target="_blank" class="btn btn-outline-dark me-2">Repository</a>
+            <a href="bib/clash.bib" download="clash.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Chilean Constitution Modal -->
-  <div class="modal fade project-modal" id="modalConstitution" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-          
-          <h3 class="modal-title mb-4">Chilean Constitution</h3>
-          <img src="images/marcha.jpeg" alt="Chilean Social Strike" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
-          
-          <div class="text-end mb-4">
-            <small class="text-muted">* The largest social strike in the history of Chile. More than 1.2 million people gathered protesting in the center of Santiago.<br>Oct 25th, 2019</small>
+</div>
+
+<!-- Chilean Constitution Modal -->
+<div class="modal fade project-modal" id="modalConstitution" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <h3 class="modal-title mb-4">Chilean Constitution</h3>
+        <img src="images/marcha.jpeg" alt="Chilean Social Strike" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+        
+        <div class="text-end mb-4">
+          <small class="text-muted">* The largest social strike in the history of Chile. More than 1.2 million people gathered protesting in the center of Santiago.<br>Oct 25th, 2019</small>
+        </div>
+        
+        <div class="mb-5">
+          <span class="badge bg-primary mb-2">@MapaConstituyente - (2022/1)</span>
+          <h4>Understanding Social Requirements for the upcoming Chilean Constitution</h4>
+          <p class="text-justify">
+            The upcoming Chilean constitution represents one of the huge challenges for the country, specially regarding the analysis and understanding of the citizen's requirements and desires. For that reason, we carried out an analysis of the councils and citizen proposals in order to understand the primary requirements of the people. This analysis served as a statistical basis in the discussion for the generation of articles within the constitution. In this project, I led the technical development and analysis team.
+            <br><br>
+            This project was requested by Chilean constituents.
+          </p>
+          <div class="mt-3">
+            <a href="http://mapaconstituyente.com/" target="_blank" class="btn btn-outline-primary">Website</a>
           </div>
-          
-          <div class="mb-5">
-            <span class="badge bg-primary mb-2">@MapaConstituyente - (2022/1)</span>
-            <h4>Understanding Social Requirements for the upcoming Chilean Constitution</h4>
-            <p class="text-justify">
-              The upcoming Chilean constitution represents one of the huge challenges for the country, specially regarding the analysis and understanding of the citizen's requirements and desires. For that reason, we carried out an analysis of the councils and citizen proposals in order to understand the primary requirements of the people. This analysis served as a statistical basis in the discussion for the generation of articles within the constitution. In this project, I led the technical development and analysis team.
-              <br><br>
-              This project was requested by Chilean constituents.
-            </p>
-            <div class="mt-3">
-              <a href="http://mapaconstituyente.com/" target="_blank" class="btn btn-outline-primary">Website</a>
-            </div>
-          </div>
-          
-          <hr class="my-4">
-          
-          <div>
-            <span class="badge bg-primary mb-2">@El Chile que Queremos - (2021/2)</span>
-            <h4>Understanding the Chilean Social Outbreak</h4>
-            <p class="text-justify">
-              El Chile que Queremos (The Chile we Want) is an interinstitutional initiative between four Chilean universities (UdeC, UChile, PUC, UDD). Our objective is to investigate and understand the emotions and social needs that caused the 2019's Chilean social outbreak and generated the upcoming change in the Chilean constitution. In this project I led the technical development and analysis team.
-              <br><br>
-              This project was requested by the Chilean Ministry of Social Development and Sciences.
-            </p>
-            <div class="mt-3">
-              <a href="https://github.com/MinCiencia/ECQQ" target="_blank" class="btn btn-outline-dark">Repository</a>
-            </div>
+        </div>
+        
+        <hr class="my-4">
+        
+        <div>
+          <span class="badge bg-primary mb-2">@El Chile que Queremos - (2021/2)</span>
+          <h4>Understanding the Chilean Social Outbreak</h4>
+          <p class="text-justify">
+            El Chile que Queremos (The Chile we Want) is an interinstitutional initiative between four Chilean universities (UdeC, UChile, PUC, UDD). Our objective is to investigate and understand the emotions and social needs that caused the 2019's Chilean social outbreak and generated the upcoming change in the Chilean constitution. In this project I led the technical development and analysis team.
+            <br><br>
+            This project was requested by the Chilean Ministry of Social Development and Sciences.
+          </p>
+          <div class="mt-3">
+            <a href="https://github.com/MinCiencia/ECQQ" target="_blank" class="btn btn-outline-dark">Repository</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
-  <!-- Wearables Modal -->
-  <div class="modal fade project-modal" id="modalWearable" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
-          
-          <h3 class="modal-title mb-4">Wearables</h3>
-          <img src="images/EEG.jpg" alt="EEG Device" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
-          
-          <div>
-            <span class="badge bg-primary mb-2">@Biomedical Laboratory, UdeC - (2020/1)</span>
-            <h4>Real-time EEG-based Drowsiness Detection Algorithm</h4>
-            <p class="text-justify">
-              Drowsy driving is a major problem in road safety. This issue is responsible for a huge number of crashes, injuries, and deaths along the world.
-              <br><br>
-              Working at the Biomedical Laboratory of UdeC, I was responsible for implementing a machine learning system for drowsiness detection using electroencephalography (EEG) signals extracted from a 16-channels g.Nautilus EEG headset. I faced some challenges, such as the need for a reduced number of channels to consider the ergonomic nature of the system, the high cost of the signal labeling process, and the need for real-time detection. Thereby, we are implemented a transfer learning algorithm that learns from vast annotated public sources and uses that knowledge to improve the performance of our low annotated signals. Thus, we efficiently reduced the number of channels, while maintaining the same labeling efforts. Moreover, the system is running almost in real-time!
-              <br><br>
-              This project was funded by the "Fund for the Promotion of Scientific and Technological Development" (FONDEF). Unfortunately, the repository will not be publicly released.
-            </p>
+</div>
+
+<!-- Wearables Modal -->
+<div class="modal fade project-modal" id="modalWearable" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <h3 class="modal-title mb-4">Wearables</h3>
+        <img src="images/EEG.jpg" alt="EEG Device" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+        
+        <div>
+          <span class="badge bg-primary mb-2">@Biomedical Laboratory, UdeC - (2020/1)</span>
+          <h4>Real-time EEG-based Drowsiness Detection Algorithm</h4>
+          <p class="text-justify">
+            Drowsy driving is a major problem in road safety. This issue is responsible for a huge number of crashes, injuries, and deaths along the world.
+            <br><br>
+            Working at the Biomedical Laboratory of UdeC, I was responsible for implementing a machine learning system for drowsiness detection using electroencephalography (EEG) signals extracted from a 16-channels g.Nautilus EEG headset. I faced some challenges, such as the need for a reduced number of channels to consider the ergonomic nature of the system, the high cost of the signal labeling process, and the need for real-time detection. Thereby, we are implemented a transfer learning algorithm that learns from vast annotated public sources and uses that knowledge to improve the performance of our low annotated signals. Thus, we efficiently reduced the number of channels, while maintaining the same labeling efforts. Moreover, the system is running almost in real-time!
+            <br><br>
+            This project was funded by the "Fund for the Promotion of Scientific and Technological Development" (FONDEF). Unfortunately, the repository will not be publicly released.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Predictive Maintenance Modal -->
+<div class="modal fade project-modal" id="modalPredictive" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <h3 class="modal-title mb-4">Predictive Maintenance for Pulp Mills</h3>
+        <img src="images/dashboard.png" alt="AI Model for Predictive Maintenance" class="img-fluid w-70 project-modal-img rounded mb-4" loading="lazy">
+        
+        <div>
+          <span class="badge bg-primary mb-2">@CMPC Company</span>
+          <h4>Intelligent System for Predictive Maintenance</h4>
+          <p class="text-justify">
+            The pulp and paper industry is a critical manufacturing sector in Chile that requires continuous monitoring of production machinery to prevent costly downtime and ensure operational efficiency. For CMPC, one of Latin America's largest pulp and paper manufacturers, early detection of potential equipment failures is essential to maintain production levels and reduce maintenance costs.
+            <br><br>
+            Our team developed an intelligent system for predictive maintenance in pulp drying machines using advanced ML-powered monitoring and analytics. The system integrates real-time sensor data collection with deep learning algorithms to detect anomalous patterns that might indicate impending equipment failures before they occur.
+            <br><br>
+            The analytical solution features real-time data visualization and monitoring, digital feedback integration, action logging and historical data access, enhanced visual reporting with customizable dashboards, and an automated alert system for anomaly detection.
+            <br><br>
+            This project delivered significant measurable outcomes for CMPC's operations, directly contributing to operational cost savings through reduced unplanned downtime, extended equipment lifetime, and optimized maintenance scheduling.
+          </p>
+          <div class="d-flex justify-content-between mt-4">
+            <span><i class="fas fa-chart-line me-2"></i> Status: Operational monitoring</span>
+            <span><i class="fas fa-check-circle me-2"></i> Result: Normal operation with enhanced decision support</span>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- Methane Detection Modal -->
+<div class="modal fade project-modal" id="modalMethane" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+        <h3 class="modal-title mb-4">MethaneSAT Cloud and Shadow Detection</h3>
+        <img src="images/methanesat.jpg" alt="MethaneSAT Project" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+        
+        <div>
+          <span class="badge bg-primary mb-2">@Harvard Center for Astrophysics - EDF</span>
+          <h4>Advanced ML Algorithms for Methane Monitoring</h4>
+          <p class="text-justify">
+            Climate change mitigation requires accurate monitoring of methane (CH<sub>4</sub>), a potent greenhouse gas with 80 times the warming potential of carbon dioxide in the first 20 years after release. The MethaneSAT mission, launched in April 2024, aims to bridge the gap between global mapping satellites with low spatial resolution and high-resolution point-source imagers.
+            <br><br>
+            Our team developed advanced machine learning algorithms to address one of the most significant challenges in atmospheric methane retrievals: the accurate detection and mitigation of cloud and shadow effects in hyperspectral satellite imagery.
+            <br><br>
+            We conducted a comprehensive evaluation of machine learning approaches for cloud and shadow detection in MethaneSAT and MethaneAIR hyperspectral data, comparing traditional methods with advanced deep learning architectures.
+            <br><br>
+            This research directly supports global methane monitoring efforts by improving the reliability of satellite-based measurements, enabling more accurate identification and quantification of emission sources.
+          </p>
+          Work in progress...
+          <div class="mt-4">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   
   <!-- Other modals would go here (Galaxy, Constitution, Wearable) with similar structure -->
   
