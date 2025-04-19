@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Manuel Pérez Carrasco</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Manuel Pérez Carrasco - CTO at the Center for Data and Artificial Intelligence UdeC, specializing in computer vision and time series analysis.">
+  <meta name="author" content="Manuel Pérez Carrasco">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Manuel Pérez Carrasco - Portfolio">
+  <meta property="og:description" content="Research in remote sensing, astronomical objects, computer vision and time series analysis.">
+  <meta property="og:type" content="website">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Font - Single font instead of multiple -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #004A87;
+      --secondary-color: #6c757d;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+      --transition: all 0.3s ease-in-out;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    
+    /* Sidebar Styles */
+    #sidebar {
+      min-height: 100vh;
+      background-color: var(--light-color);
+      position: fixed;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      width: 280px;
+    }
+    
+    #sidebar .nav-link {
+      color: var(--dark-color);
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+    
+    #sidebar .nav-link:hover, 
+    #sidebar .nav-link.active {
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+    
+    .social-links {
+      margin-top: 2rem;
+    }
+    
+    .social-links a {
+      color: var(--dark-color);
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: scale(1.2);
+    }
+    
+    /* Main Content */
+    #main-content {
+      margin-left: 280px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+    
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Project Cards */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      height: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .project-img {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 1.5rem;
+      color: white;
+      transition: var(--transition);
+    }
+    
+    .project-card:hover .project-overlay {
+      background: rgba(0, 74, 135, 0.9);
+    }
+    
+    /* Modal Styles */
+    .project-modal .modal-content {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .project-modal .modal-body {
+      padding: 2rem;
+    }
+    
+    .project-modal .modal-img {
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 992px) {
+      #sidebar {
+        min-height: auto;
+        position: static;
+        box-shadow: none;
+        padding: 1rem;
+        text-align: center;
+        width: 100%;
+      }
+      
+      #main-content {
+        margin-left: 0;
+      }
+      
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .mobile-menu {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+        background: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      .mobile-nav {
+        background-color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        padding: 1rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+        transform: translateY(-100%);
+      }
+      
+      .mobile-nav.show {
+        transform: translateY(0);
+      }
+      
+      .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 999;
+        display: none;
+      }
+      
+      .nav-overlay.show {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Mobile Menu Toggle -->
+  <div class="mobile-menu d-lg-none">
+    <button class="btn" type="button" id="mobileMenuToggle">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav d-lg-none" id="mobileNav">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="m-0">Menu</h3>
+      <button class="btn" id="closeMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <nav>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link active py-2" href="index.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="academia.html">Academia</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="industry.html">Industry</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="about.html">About me</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="CV/CVManuel.pdf" download="Perez-Carrasco-CV.pdf">CV</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="mailto:maperezc@inf.udec.cl">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="text-center mt-4">
+      <a href="https://github.com/mperezcarrasco" target="_blank" class="me-3"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://www.linkedin.com/in/manuel-ignacio-p%C3%A9rez-carrasco-80963b142/" target="_blank" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="https://www.instagram.com/manacho14/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar (desktop only) -->
+      <div class="col-lg-3 px-0 d-none d-lg-block">
+        <div id="sidebar">
+          <h1 class="fw-bold mb-4">Manuel</h1>
+          <nav>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link active" href="index.html">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="academia.html">Academia</a></li>
+              <li class="nav-item"><a class="nav-link" href="industry.html">Industry</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
+              <li class="nav-item"><a class="nav-link" href="CV/CVManuel.pdf" download="Perez-Carrasco-CV.pdf">CV</a></li>
+              <li class="nav-item"><a class="nav-link" href="mailto:maperezc@inf.udec.cl">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="social-links">
+            <a href="https://github.com/mperezcarrasco" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manuel-ignacio-p%C3%A9rez-carrasco-80963b142/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/manacho14/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div id="main-content" class="col-lg-9 px-0">
+        <!-- Hero Section -->
+        <section class="hero-section" style="background-image: url('images/wallpaper.png');">
+          <div class="container">
+            <div class="hero-content">
+              <img src="images/author.jpeg" alt="Manuel Pérez Carrasco" class="profile-img img-fluid">
+              <h3 class="mb-2">Hi! I'm</h3>
+              <h1 class="display-4 fw-bold mb-4">Manuel Pérez Carrasco</h1>
+              <p class="lead">
+                CTO at the Center for Data and Artificial Intelligence UdeC. My research focuses on mapping natural resources and contaminants using remote sensing data, as well as studying astronomical objects from survey telescopes. I specialize natural language processing, computer vision and time series analysis.
+                <br>Keep looking for more information about my work :)
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section class="py-5">
+          <div class="container">
+            <h2 class="text-center mb-5">Projects</h2>
+            
+            <div class="row g-4">
+              <!-- Project 1: Domain Adaptation -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/da.jpg" alt="Domain Adaptation" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Domain Adaptation</h4>
+                    <p class="mb-0">@UdeC/Harvard U.</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDA">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 2: Anomaly Detection -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/alerce-photo.jpg" alt="Anomaly Detection" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Anomaly Detection</h4>
+                    <p class="mb-0">@ALeRCE</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalAlerce">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 3: DeepHub -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/arauco-predio.png" alt="DeepHub" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>DeepHub</h4>
+                    <p class="mb-0">@UdeC/ARAUCO</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDeepHub">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 4: Galaxy Morphologies -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/cluster.jpeg" alt="Galaxy Morphologies" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Galaxy Morphologies</h4>
+                    <p class="mb-0">@UdeC/Harvard U.</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalGalaxy">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 5: Predictive Maintenance -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/modelo_ia.png" alt="Predictive Maintenance" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Predictive Maintenance</h4>
+                    <p class="mb-0">@CMPC</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalPredictive">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 6: Methane Detection -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/methanesat.jpg" alt="Methane Detection" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Methane Detection</h4>
+                    <p class="mb-0">@EDF/Harvard</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalMethane">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 7: Chilean Constitution -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/constitucion.jpeg" alt="Chilean Constitution" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Chilean Constitution</h4>
+                    <p class="mb-0">@UDS</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalConstitution">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 8: Wearables -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/device.jpg" alt="Wearables" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Wearables</h4>
+                    <p class="mb-0">@Biomedical Lab, UdeC</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalWearable">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 mx-auto text-center">
+                <p>
+                  <i class="fas fa-map-marker-alt me-2"></i>Edmundo Larenas 270 interior, University of Concepción, Chile<br>
+                  <i class="fas fa-phone me-2"></i>+56 997 946 050<br>
+                  <i class="fas fa-envelope me-2"></i>maperezc@inf.udec.cl
+                </p>
+                <p class="mt-4">
+                  &copy; <script>document.write(new Date().getFullYear());</script> Manuel Pérez Carrasco | All rights reserved
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Include modals here -->
+  <!-- ... Your existing modals ... -->
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Mobile navigation toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const navOverlay = document.getElementById('navOverlay');
+      const closeMenu = document.getElementById('closeMenu');
+      const mobileNavLinks = document.querySelectorAll('#mobileNav .nav-link');
+      
+      function openMobileMenu() {
+        mobileNav.classList.add('show');
+        navOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+      }
+      
+      function closeMobileMenu() {
+        mobileNav.classList.remove('show');
+        navOverlay.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+      
+      mobileMenuToggle.addEventListener('click', openMobileMenu);
+      closeMenu.addEventListener('click', closeMobileMenu);
+      navOverlay.addEventListener('click', closeMobileMenu);
+      
+      // Close menu when clicking a link
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+      
+      // Close mobile menu on window resize (if screen becomes large enough)
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

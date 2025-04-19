@@ -705,7 +705,6 @@
 </div>
 
   
-  <!-- Other modals would go here (Galaxy, Constitution, Wearable) with similar structure -->
   
   <!-- Include only the necessary JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -724,6 +723,51 @@
             bsCollapse.hide();
           }
         });
+      });
+    });
+  </script>
+</body>
+</html>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Mobile navigation toggle
+      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const navOverlay = document.getElementById('navOverlay');
+      const closeMenu = document.getElementById('closeMenu');
+      const mobileNavLinks = document.querySelectorAll('#mobileNav .nav-link');
+      
+      function openMobileMenu() {
+        mobileNav.classList.add('show');
+        navOverlay.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+      }
+      
+      function closeMobileMenu() {
+        mobileNav.classList.remove('show');
+        navOverlay.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+      
+      mobileMenuToggle.addEventListener('click', openMobileMenu);
+      closeMenu.addEventListener('click', closeMobileMenu);
+      navOverlay.addEventListener('click', closeMobileMenu);
+      
+      // Close menu when clicking a link
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+      
+      // Close mobile menu on window resize (if screen becomes large enough)
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          closeMobileMenu();
+        }
       });
     });
   </script>
