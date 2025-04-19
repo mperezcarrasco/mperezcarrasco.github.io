@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Manuel Pérez Carrasco</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Manuel Pérez Carrasco - CTO at the Center for Data and Artificial Intelligence UdeC, specializing in computer vision and time series analysis.">
+  <meta name="author" content="Manuel Pérez Carrasco">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="Manuel Pérez Carrasco - Portfolio">
+  <meta property="og:description" content="Research in remote sensing, astronomical objects, computer vision and time series analysis.">
+  <meta property="og:type" content="website">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Font - Single font instead of multiple -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --dark-color: #343a40;
+      --light-color: #f8f9fa;
+      --transition: all 0.3s ease-in-out;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    
+    /* Sidebar Styles */
+    #sidebar {
+      min-height: 100vh;
+      background-color: var(--light-color);
+      position: fixed;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    
+    #sidebar .nav-link {
+      color: var(--dark-color);
+      padding: 0.5rem 0;
+      transition: var(--transition);
+    }
+    
+    #sidebar .nav-link:hover, 
+    #sidebar .nav-link.active {
+      color: var(--primary-color);
+      transform: translateX(5px);
+    }
+    
+    .social-links {
+      margin-top: 2rem;
+    }
+    
+    .social-links a {
+      color: var(--dark-color);
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      color: var(--primary-color);
+      transform: scale(1.2);
+    }
+    
+    /* Main Content */
+    #main-content {
+      margin-left: 280px;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: white;
+    }
+    
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Project Cards */
+    .project-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      height: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    .project-img {
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .project-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 1.5rem;
+      color: white;
+      transition: var(--transition);
+    }
+    
+    .project-card:hover .project-overlay {
+      background: rgba(0, 123, 255, 0.9);
+    }
+    
+    /* Modal Styles */
+    .project-modal .modal-content {
+      border: none;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .project-modal .modal-body {
+      padding: 2rem;
+    }
+    
+    .project-modal .modal-img {
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    .footer a:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Mobile Styles */
+    @media (max-width: 992px) {
+      #sidebar {
+        min-height: auto;
+        position: static;
+        box-shadow: none;
+        padding: 1rem;
+        text-align: center;
+      }
+      
+      #main-content {
+        margin-left: 0;
+      }
+      
+      .profile-img {
+        width: 150px;
+        height: 150px;
+      }
+      
+      .mobile-menu {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        z-index: 1001;
+        background: white;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      }
+      
+      .collapse:not(.show) {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Mobile Menu Toggle -->
+  <div class="mobile-menu d-lg-none">
+    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarContent">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-lg-3 px-0">
+        <div id="sidebar" class="collapse d-lg-block">
+          <h1 class="fw-bold mb-4">Manuel</h1>
+          <nav>
+            <ul class="nav flex-column">
+              <li class="nav-item"><a class="nav-link active" href="index.html">Projects</a></li>
+              <li class="nav-item"><a class="nav-link" href="academia.html">Academia</a></li>
+              <li class="nav-item"><a class="nav-link" href="industry.html">Industry</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About me</a></li>
+              <li class="nav-item"><a class="nav-link" href="CV/CVManuel.pdf" download="Perez-Carrasco-CV.pdf">CV</a></li>
+              <li class="nav-item"><a class="nav-link" href="mailto:maperezc@udec.cl">Contact</a></li>
+            </ul>
+          </nav>
+          
+          <div class="social-links">
+            <a href="https://github.com/mperezcarrasco" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/manuel-ignacio-p%C3%A9rez-carrasco-80963b142/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/manacho14/" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main Content -->
+      <div id="main-content" class="col-lg-9 px-0">
+        <!-- Hero Section -->
+        <section class="hero-section" style="background-image: url('images/bg_1.jpg');">
+          <div class="container">
+            <div class="hero-content">
+              <img src="images/author.jpg" alt="Manuel Pérez Carrasco" class="profile-img img-fluid">
+              <h3 class="mb-2">Hi! I'm</h3>
+              <h1 class="display-4 fw-bold mb-4">Manuel Pérez Carrasco</h1>
+              <p class="lead">
+                CTO at the Center for Data and Artificial Intelligence UdeC. My research focuses on mapping natural resources using remote sensing data, as well as studying astronomical objects from survey telescopes. I specialize in computer vision and time series analysis.
+                <br>Keep looking for more information about my work :)
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section class="py-5">
+          <div class="container">
+            <h2 class="text-center mb-5">Projects</h2>
+            
+            <div class="row g-4">
+              <!-- Project 1: Domain Adaptation -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/da.jpg" alt="Domain Adaptation" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Domain Adaptation</h4>
+                    <p class="mb-0">@UdeC/Harvard U.</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDA">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 2: Anomaly Detection -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/alerce-photo.jpg" alt="Anomaly Detection" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Anomaly Detection</h4>
+                    <p class="mb-0">@ALeRCE</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalAlerce">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 3: DeepHub -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/arauco-predio.png" alt="DeepHub" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>DeepHub</h4>
+                    <p class="mb-0">@UdeC/ARAUCO</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDeepHub">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 4: Galaxy Morphologies -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/cluster.jpeg" alt="Galaxy Morphologies" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Galaxy Morphologies</h4>
+                    <p class="mb-0">@UdeC/Harvard U.</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalGalaxy">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 5: Chilean Constitution -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/constitucion.jpeg" alt="Chilean Constitution" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Chilean Constitution</h4>
+                    <p class="mb-0">@UDS</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalConstitution">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Project 6: Wearables -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/device.jpg" alt="Wearables" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Wearables</h4>
+                    <p class="mb-0">@Biomedical Lab, UdeC</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalWearable">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 mx-auto text-center">
+                <p>
+                  <i class="fas fa-map-marker-alt me-2"></i>Edmundo Larenas 270 interior, University of Concepción, Chile<br>
+                  <i class="fas fa-phone me-2"></i>+56 997 946 050<br>
+                  <i class="fas fa-envelope me-2"></i>maperezc@udec.cl
+                </p>
+                <p class="mt-4">
+                  &copy; <script>document.write(new Date().getFullYear());</script> Manuel Pérez Carrasco | All rights reserved
+                </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modals -->
+  
+  <!-- Domain Adaptation Modal -->
+  <div class="modal fade project-modal" id="modalDA" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <h3 class="modal-title mb-4">Domain Adaptation</h3>
+          <img src="images/condaDiagram.png" alt="Con2DA Diagram" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div class="mb-5">
+            <span class="badge bg-primary mb-2">@UdeC/Harvard U. (2020/2 - 2021-1)</span>
+            <h4>Con2DA: Simplifying Semi-supervised Domain Adaptation by Learning Consistent and Contrastive Feature Representations</h4>
+            <p class="text-justify">
+              In this work we explored the using of different data augmentation and semi-supervised techniques in order to improve generalization in the semi-supervised domain adaptation context. In this work we show that (i) learning of the consistent and contrastive feature representations is crucial to extract good discriminative features across different domains, and ii) our model benefits from the use of strong augmentation policies. With these findings, our method achieves state-of-the-art performances in three benchmark datasets for SSDA. This work was presented in the NeurIPS 2021 Workshop on Distribution Shifts.
+            </p>
+            <div class="mt-3">
+              <a href="https://openreview.net/forum?id=-JFwI38C6Qo" target="_blank" class="btn btn-outline-primary me-2">Paper</a>
+              <a href="bib/con2da.bib" download="con2da.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
+            </div>
+          </div>
+          
+          <hr class="my-4">
+          
+          <img src="images/AVDA.jpg" alt="AVDA Approach" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div>
+            <span class="badge bg-primary mb-2">@UdeC/Harvard U. (2018/2 - 2019/1)</span>
+            <h4>Masters Thesis: Semi-supervised Domain Adaptation for Image Classification Through Generative Models</h4>
+            <p class="text-justify">
+              Deep learning models have demonstrated to be very good at discovering underlying patterns in the data. But for these models works correctly it is usually needed a large amount of annotated data in order to avoid the overfitting and be able to generalize over new data. Unfortunately, in real-life cases, labeling data is costly and time-consuming. Domain adaptation models aim at generalizing a model trained in a vast annotated source to perform well in a low annotated target by finding a common-shared representation between them.
+              <br><br>
+              I started this project as my master thesis adviced by <a href="http://www.inf.udec.cl/~guille/" target="_blank">Guillermo Cabrera</a>, and <a href="https://iacs.seas.harvard.edu/people/pavlos-protopapas" target="_blank">Pavlos Protopapas</a>. We tackled the problem using recent advances in semi-supervised learning and generative models, and our model outperformed the state-of-the-art in low-dimensional benchmarks. This work was awarded <strong>Best Student Paper Award</strong> at the Astroinformatics 2019 Conference.
+            </p>
+            <div class="mt-3">
+              <a href="https://arxiv.org/abs/1909.11651" target="_blank" class="btn btn-outline-primary me-2">Preprint</a>
+              <a href="https://www.youtube.com/watch?v=se5B7w-Tfco" target="_blank" class="btn btn-outline-info me-2">Presentation</a>
+              <a href="bib/mpriors.bib" download="mpriors.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Anomaly Detection Modal -->
+  <div class="modal fade project-modal" id="modalAlerce" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <h3 class="modal-title mb-4">Anomaly Detection</h3>
+          <img src="images/snhunter.jpg" alt="SN Hunter" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div>
+            <span class="badge bg-primary mb-2">@Automatic Learning for the Rapid Classification of Events (ALeRCE) - (2020/1 - 2022/1)</span>
+            <h4>Anomaly Detection Algorithm for Astronomical Light Curves</h4>
+            <p class="fst-italic text-end">"We are a way for the universe to know itself." - Carl Sagan</p>
+            <p class="text-justify">
+              <a href="http://alerce.science/" target="_blank">ALeRCE</a> is an interinstitutional and interdisciplinary astronomical broker which uses a Cloud Infrastructure and Machine Learning for processing variable stars alerts from the Zwicky Transient Facility (ZTF) survey, and which aims to become a Community Broker for the Vera Rubin Observatory, which will have the largest digital camera ever fabricated for optical astronomy!
+              <br><br>
+              In ALeRCE I was responsible for implementing an anomaly detection algorithm using the astronomical light curves coming from the variable star alerts. The idea is to detect objects that do not belong to the ALeRCE's taxonomy and send alerts to the astronomers for further follow-up and astrophysical studies. Our main goal is to be the firsts in detecting unknown astronomical objects, thereby contributing to a better understanding of new astrophysical phenomena that describes the evolution of our universe.
+              <br><br>
+              Paper under review.
+            </p>
+            <div class="mt-3">
+              <a href="https://arxiv.org/abs/2008.03303" target="_blank" class="btn btn-outline-primary me-2">Presentation Paper</a>
+              <a href="https://www.youtube.com/watch?v=Ul3VkZ4v_5g" target="_blank" class="btn btn-outline-info me-2">Presentation Video</a>
+              <a href="https://github.com/alercebroker/" target="_blank" class="btn btn-outline-dark">Repository</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- DeepHub Modal -->
+  <div class="modal fade project-modal" id="modalDeepHub" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <h3 class="modal-title mb-4">DeepHub</h3>
+          <img src="images/deephub.png" alt="DeepHub" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div>
+            <span class="badge bg-primary mb-2">@ARAUCO Company - (2019-2)</span>
+            <h4>DeepHub</h4>
+            <p class="text-justify">
+              The wood industry is one of the most important economical sectors in Chile, representing almost one sixth of total exports, placing it as the second-largest export sector of the country. In this context, ARAUCO is one of the bigger wood companies in South America, and an important competitor globally.
+              <br><br>
+              For this sector, the information about the number of trees in a field is essential because it helps to estimate productivity, evaluate the density of the plantations, and detect errors occurring during the seedling process, opening the possibility for efficient replanting.
+              <br><br>
+              ARAUCO Deep-Hub is a software that uses Cloud Infrastructure and Deep Learning algorithms for labeling, training, and predicting statistics using high-dimensional RGB georeferenced images from high-resolution drone cameras. For this project I designed and implemented Deep Learning algorithms that solve the aforementioned problems. I developed two algorithms based on state-of-the-art works. One was <a href="https://arxiv.org/abs/1804.02767" target="_blank">YOLOv3</a>, a famous algorithm for real-time object detection in images that allow us to detect trees and therefore count them. The second algorithm was <a href="https://arxiv.org/abs/1703.06870" target="_blank">Mask RCNN</a>, an instance-segmentation algorithm, which detect trees and segmentate them at the same time, allowing us to estimate the density of the plantations. Also, I designed the required algorithms that works as an interface between the deep learning algoritms and high-dimensional data. Our approach presents a low-cost solution, in contrast to expensive multispectral, hyperspectral, and LiDAR-based solutions. This project was the winner of the innovation challenge of ARAUCO Company.
+              <br><br>
+              Paper published on the International Journal of Digital Earth (IJDE), 2022
+            </p>
+            <div class="mt-3">
+              <a href="https://www.tandfonline.com/doi/full/10.1080/17538947.2022.2152882" target="_blank" class="btn btn-outline-primary me-2">Paper</a>
+              <a href="bib/deephub.bib" download="deephub.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Galaxy Morphologies Modal -->
+  <div class="modal fade project-modal" id="modalGalaxy" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <h3 class="modal-title mb-4">Galaxy Morphologies</h3>
+          <img src="images/galaxies.jpg" alt="Galaxy Morphologies" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div>
+            <span class="badge bg-primary mb-2">@UdeC/Harvard U. (2017/2 - 2018/1)</span>
+            <h4>Undergrad Thesis: Attributes Transfer in Deep Neural Network Applied to Astronomical Images</h4>
+            <p class="text-justify">
+              The galaxy evolution through time is one of the key questions of modern astrophysics and the study of their morphologies represents a fundamental and powerful diagnosis to evolutionary changes of galaxies.
+              <br><br>
+              Thus, advised by <a href="http://www.inf.udec.cl/~guille/" target="_blank">Guillermo Cabrera</a>, during my undergraduated honor research thesis <a href="http://astro.inf.udec.cl/" target="_blank">we</a> created a new catalog of galaxy morphologies for "Cluster Lensing and Supernova survey with Hubble (CLASH)" using deep neural networks.
+              <br><br>
+              One of the problem of this approach is the data required a lot of time of expert astronomers to be labeled. Fortunately sometimes it is possible to find similar or related other sources available and we can take advantage of them to make our few labeled target data performs better. For this project, we took advantage of a vast labeled source named "The Cosmic Assembly Near-infrared Deep Extragalactic Legacy Survey (CANDELS)" consisting of images associated with 5 different galaxy morphologies labeled by expert using visual inspection. We used the same taxonomy and created a few eyeball labels. As in some cases there exist disagreement between expert opinions, we handled as regression problem. Moreover, we used different deep learning architectures and a transfer learning technique named fine-tuning, to finally show the effectiveness of this method. Finally, we released a public <a href="https://github.com/mperezcarrasco/CLASH/blob/master/Deep-CLASH.csv" target="_blank">Catalog</a> of 8,412 galaxies in 25 different photometrics filters from CLASH.
+            </p>
+            <div class="mt-3">
+              <a href="https://iopscience.iop.org/article/10.1088/1538-3873/aaeeb4" target="_blank" class="btn btn-outline-primary me-2">Paper</a>
+              <a href="https://github.com/mperezcarrasco/CLASH" target="_blank" class="btn btn-outline-dark me-2">Repository</a>
+              <a href="bib/clash.bib" download="clash.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Chilean Constitution Modal -->
+  <div class="modal fade project-modal" id="modalConstitution" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <h3 class="modal-title mb-4">Chilean Constitution</h3>
+          <img src="images/marcha.jpeg" alt="Chilean Social Strike" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div class="text-end mb-4">
+            <small class="text-muted">* The largest social strike in the history of Chile. More than 1.2 million people gathered protesting in the center of Santiago.<br>Oct 25th, 2019</small>
+          </div>
+          
+          <div class="mb-5">
+            <span class="badge bg-primary mb-2">@MapaConstituyente - (2022/1)</span>
+            <h4>Understanding Social Requirements for the upcoming Chilean Constitution</h4>
+            <p class="text-justify">
+              The upcoming Chilean constitution represents one of the huge challenges for the country, specially regarding the analysis and understanding of the citizen's requirements and desires. For that reason, we carried out an analysis of the councils and citizen proposals in order to understand the primary requirements of the people. This analysis served as a statistical basis in the discussion for the generation of articles within the constitution. In this project, I led the technical development and analysis team.
+              <br><br>
+              This project was requested by Chilean constituents.
+            </p>
+            <div class="mt-3">
+              <a href="http://mapaconstituyente.com/" target="_blank" class="btn btn-outline-primary">Website</a>
+            </div>
+          </div>
+          
+          <hr class="my-4">
+          
+          <div>
+            <span class="badge bg-primary mb-2">@El Chile que Queremos - (2021/2)</span>
+            <h4>Understanding the Chilean Social Outbreak</h4>
+            <p class="text-justify">
+              El Chile que Queremos (The Chile we Want) is an interinstitutional initiative between four Chilean universities (UdeC, UChile, PUC, UDD). Our objective is to investigate and understand the emotions and social needs that caused the 2019's Chilean social outbreak and generated the upcoming change in the Chilean constitution. In this project I led the technical development and analysis team.
+              <br><br>
+              This project was requested by the Chilean Ministry of Social Development and Sciences.
+            </p>
+            <div class="mt-3">
+              <a href="https://github.com/MinCiencia/ECQQ" target="_blank" class="btn btn-outline-dark">Repository</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Wearables Modal -->
+  <div class="modal fade project-modal" id="modalWearable" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
+          
+          <h3 class="modal-title mb-4">Wearables</h3>
+          <img src="images/EEG.jpg" alt="EEG Device" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          
+          <div>
+            <span class="badge bg-primary mb-2">@Biomedical Laboratory, UdeC - (2020/1)</span>
+            <h4>Real-time EEG-based Drowsiness Detection Algorithm</h4>
+            <p class="text-justify">
+              Drowsy driving is a major problem in road safety. This issue is responsible for a huge number of crashes, injuries, and deaths along the world.
+              <br><br>
+              Working at the Biomedical Laboratory of UdeC, I was responsible for implementing a machine learning system for drowsiness detection using electroencephalography (EEG) signals extracted from a 16-channels g.Nautilus EEG headset. I faced some challenges, such as the need for a reduced number of channels to consider the ergonomic nature of the system, the high cost of the signal labeling process, and the need for real-time detection. Thereby, we are implemented a transfer learning algorithm that learns from vast annotated public sources and uses that knowledge to improve the performance of our low annotated signals. Thus, we efficiently reduced the number of channels, while maintaining the same labeling efforts. Moreover, the system is running almost in real-time!
+              <br><br>
+              This project was funded by the "Fund for the Promotion of Scientific and Technological Development" (FONDEF). Unfortunately, the repository will not be publicly released.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Other modals would go here (Galaxy, Constitution, Wearable) with similar structure -->
+  
+  <!-- Include only the necessary JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Lazy loading script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Auto-collapse sidebar on mobile when clicking a link
+      const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
+      const sidebar = document.getElementById('sidebarContent');
+      
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992) {
+            const bsCollapse = new bootstrap.Collapse(sidebar);
+            bsCollapse.hide();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
