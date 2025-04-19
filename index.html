@@ -229,9 +229,39 @@
 <body>
   <!-- Mobile Menu Toggle -->
   <div class="mobile-menu d-lg-none">
-    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarContent">
+    <button class="btn" type="button" id="mobileMenuToggle">
       <i class="fas fa-bars"></i>
     </button>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav d-lg-none" id="mobileNav">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="m-0">Menu</h3>
+      <button class="btn" id="closeMenu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <nav>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link active py-2" href="index.html">Projects</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="academia.html">Academia</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="industry.html">Industry</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="about.html">About me</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="CV/CVManuel.pdf" download="Perez-Carrasco-CV.pdf">CV</a></li>
+        <li class="nav-item"><a class="nav-link py-2" href="mailto:maperezc@inf.udec.cl">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="text-center mt-4">
+      <a href="https://github.com/mperezcarrasco" target="_blank" class="me-3"><i class="fab fa-github fa-lg"></i></a>
+      <a href="https://www.linkedin.com/in/manuel-ignacio-p%C3%A9rez-carrasco-80963b142/" target="_blank" class="me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+      <a href="https://www.instagram.com/manacho14/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a>
+    </div>
   </div>
 
   <div class="container-fluid">
@@ -269,7 +299,8 @@
               <h3 class="mb-2">Hi! I'm</h3>
               <h1 class="display-4 fw-bold mb-4">Manuel Pérez Carrasco</h1>
               <p class="lead">
-                CTO at the Center for Data and Artificial Intelligence UdeC. My research focuses on mapping natural resources and contaminants using remote sensing data, as well as studying astronomical objects from survey telescopes. I specialize natural language processing, computer vision and time series analysis.
+                CTO at the Center for Data and Artificial Intelligence UdeC. 
+                <br>My research focuses on mapping natural resources and contaminants using remote sensing data, as well as processing astronomical data from survey telescopes. I specialize natural language processing, computer vision and time series analysis.
                 <br>Keep looking for more information about my work :)
               </p>
             </div>
@@ -279,7 +310,7 @@
         <!-- Projects Section -->
         <section class="py-5">
           <div class="container">
-            <h2 class="text-center mb-5">Projects</h2>
+            <h2 class="text-center mb-5">Selected Projects</h2>
             
             <div class="row g-4">
 
@@ -311,20 +342,6 @@
                 </div>
               </div>
 
-
-              <!-- Project 1: Domain Adaptation -->
-              <div class="col-md-6 col-lg-4">
-                <div class="project-card">
-                  <img src="images/da.jpg" alt="Domain Adaptation" class="img-fluid w-100 project-img">
-                  <div class="project-overlay">
-                    <h4>Domain Adaptation</h4>
-                    <p class="mb-0">@UdeC/Harvard U.</p>
-                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDA">
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-              </div>
               
               <!-- Project 2: Anomaly Detection -->
               <div class="col-md-6 col-lg-4">
@@ -367,8 +384,21 @@
                   </div>
                 </div>
               </div>
-              
 
+
+              <!-- Project 1: Domain Adaptation -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/da.jpg" alt="Domain Adaptation" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Domain Adaptation</h4>
+                    <p class="mb-0">@UdeC/Harvard U.</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalDA">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
               
               <!-- Project 7: Chilean Constitution -->
               <div class="col-md-6 col-lg-4">
