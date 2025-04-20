@@ -222,10 +222,13 @@
 <body>
   <!-- Mobile Menu Toggle -->
   <div class="mobile-menu d-lg-none">
-    <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarContent">
+    <button class="btn" type="button" id="toggleSidebar">
       <i class="fas fa-bars"></i>
     </button>
   </div>
+  
+  <!-- Overlay for mobile menu -->
+  <div class="overlay" id="sidebarOverlay"></div>
 
   <div class="container-fluid">
     <div class="row">
