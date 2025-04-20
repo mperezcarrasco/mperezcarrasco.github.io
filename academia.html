@@ -604,3 +604,47 @@
               </div>
             </div>
           </div>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Mobile navigation toggle
+      const mobileMenuToggle = document.getElementById('toggleSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+
+      function openMobileMenu() {
+        sidebar.classList.add('show');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+      }
+      
+      function closeMobileMenu() {
+        sidebar.classList.remove('show');
+        overlay.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+      }
+      
+      mobileMenuToggle.addEventListener('click', openMobileMenu);
+      overlay.addEventListener('click', closeMobileMenu);
+      
+      // Close menu when clicking a link
+      const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+      
+      // Close mobile menu on window resize (if screen becomes large enough)
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 992) {
+          closeMobileMenu();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
