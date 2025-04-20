@@ -762,30 +762,28 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Mobile navigation toggle
-      const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-      const mobileNav = document.getElementById('mobileNav');
-      const navOverlay = document.getElementById('navOverlay');
-      const closeMenu = document.getElementById('closeMenu');
-      const mobileNavLinks = document.querySelectorAll('#mobileNav .nav-link');
-      
+      const mobileMenuToggle = document.getElementById('toggleSidebar');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+
       function openMobileMenu() {
-        mobileNav.classList.add('show');
-        navOverlay.classList.add('show');
+        sidebar.classList.add('show');
+        overlay.classList.add('show');
         document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
       }
       
       function closeMobileMenu() {
-        mobileNav.classList.remove('show');
-        navOverlay.classList.remove('show');
+        sidebar.classList.remove('show');
+        overlay.classList.remove('show');
         document.body.style.overflow = ''; // Restore scrolling
       }
       
       mobileMenuToggle.addEventListener('click', openMobileMenu);
-      closeMenu.addEventListener('click', closeMobileMenu);
-      navOverlay.addEventListener('click', closeMobileMenu);
+      overlay.addEventListener('click', closeMobileMenu);
       
       // Close menu when clicking a link
-      mobileNavLinks.forEach(link => {
+      const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
+      sidebarLinks.forEach(link => {
         link.addEventListener('click', closeMobileMenu);
       });
       
