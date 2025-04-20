@@ -501,6 +501,29 @@
     </div>
   </div>
   
+  <!-- Include only the necessary JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Lazy loading script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Auto-collapse sidebar on mobile when clicking a link
+      const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
+      const sidebar = document.getElementById('sidebarContent');
+      
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992) {
+            const bsCollapse = new bootstrap.Collapse(sidebar);
+            bsCollapse.hide();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
   
