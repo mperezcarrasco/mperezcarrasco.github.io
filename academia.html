@@ -616,9 +616,9 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       // Mobile navigation toggle
-      const mobileMenuToggle = document.getElementById('toggleSidebar');
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('sidebarOverlay');
+      const mobileMenuToggle = document.getElementById('toggleSidebar'); // Ensure this ID matches the button
+      const sidebar = document.getElementById('sidebar'); // Ensure this ID matches the sidebar
+      const overlay = document.getElementById('sidebarOverlay'); // Ensure this ID matches the overlay
 
       function openMobileMenu() {
         sidebar.classList.add('show');
@@ -632,8 +632,8 @@
         document.body.style.overflow = ''; // Restore scrolling
       }
       
-      mobileMenuToggle.addEventListener('click', openMobileMenu);
-      overlay.addEventListener('click', closeMobileMenu);
+      mobileMenuToggle.addEventListener('click', openMobileMenu); // Ensure this event listener is set correctly
+      overlay.addEventListener('click', closeMobileMenu); // Ensure this event listener is set correctly
       
       // Close menu when clicking a link
       const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
