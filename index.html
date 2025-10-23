@@ -366,20 +366,6 @@
                   </div>
                 </div>
               </div>
-              
-              <!-- Project 5: Predictive Maintenance -->
-              <div class="col-md-6 col-lg-4">
-                <div class="project-card">
-                  <img src="images/predictive_mantainance.png" alt="Predictive Maintenance" class="img-fluid w-100 project-img">
-                  <div class="project-overlay">
-                    <h4>Predictive Maintenance</h4>
-                    <p class="mb-0">@CMPC</p>
-                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalPredictive">
-                      Learn More
-                    </button>
-                  </div>
-                </div>
-              </div>
 
 
               <!-- Project 1: Domain Adaptation -->
@@ -404,6 +390,20 @@
                     <h4>Chilean Constitution</h4>
                     <p class="mb-0">@UDS</p>
                     <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalConstitution">
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Project 5: Predictive Maintenance -->
+              <div class="col-md-6 col-lg-4">
+                <div class="project-card">
+                  <img src="images/predictive_mantainance.png" alt="Predictive Maintenance" class="img-fluid w-100 project-img">
+                  <div class="project-overlay">
+                    <h4>Predictive Maintenance</h4>
+                    <p class="mb-0">@CMPC</p>
+                    <button class="btn btn-outline-light mt-3" data-bs-toggle="modal" data-bs-target="#modalPredictive">
                       Learn More
                     </button>
                   </div>
@@ -537,21 +537,25 @@
           <button type="button" class="btn-close float-end" data-bs-dismiss="modal" aria-label="Close"></button>
           
           <h3 class="modal-title mb-4">DeepHub</h3>
-          <img src="images/deephub.png" alt="DeepHub" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
+          <img src="images/pipeline_deephub.png" alt="DeepHub" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
           
           <div>
             <span class="badge bg-primary mb-2">@Universidad de Concepción - (2019-2)</span>
-            <h4>DeepHub</h4>
+            <h4>Deep-Hub</h4>
             <p class="text-justify">
               The wood industry is one of the most important economical sectors in Chile, representing almost one sixth of total exports, placing it as the second-largest export sector of the country. In this context, ARAUCO is one of the bigger wood companies in South America, and an important competitor globally.
               <br><br>
               For this sector, the information about the number of trees in a field is essential because it helps to estimate productivity, evaluate the density of the plantations, and detect errors occurring during the seedling process, opening the possibility for efficient replanting.
               <br><br>
-              Deep-Hub is a software that uses Cloud Infrastructure and Deep Learning algorithms for labeling, training, and predicting statistics using high-dimensional geospatial data. For this project I designed and implemented Deep Learning algorithms that solve the aforementioned problems. I developed two algorithms based on state-of-the-art works. One was <a href="https://arxiv.org/abs/1804.02767" target="_blank">YOLOv3</a>, a famous algorithm for real-time object detection in images that allow us to detect trees and therefore count them. The second algorithm was <a href="https://arxiv.org/abs/1703.06870" target="_blank">Mask RCNN</a>, an instance-segmentation algorithm, which detect trees and segmentate them at the same time, allowing us to estimate the density of the plantations. Also, I designed the required algorithms that works as an interface between the deep learning algoritms and high-dimensional data. Our approach presents a low-cost solution, in contrast to expensive multispectral, hyperspectral, and LiDAR-based solutions. 
+              Deep-Hub is a software that uses a scalable cloud infrastructure for storing, labeling, training, and predicting statistics using high-dimensional geospatial data. For this project I designed and implemented deep learning algorithms that solve the aforementioned problems. I developed specialized modules for land cover, tree detection and instance segmentation. Our plataform presents is a low cost solution for inventory management.              
               <br><br>
-              Paper published on the International Journal of Digital Earth (IJDE), 2022
+              Deep-Hub has since evolved to a spin-off company from the School of Engineering at the University of Concepción. It provides monitoring solutions that enable local companies to effectively track and manage natural resources.             
+               <br><br>
+              Our first paper was published on the International Journal of Digital Earth (IJDE), 2023.
             </p>
             <div class="mt-3">
+              
+              <a href="https://gaia-tech.ai/" target="_blank" class="btn btn-outline-primary me-2">Website</a>
               <a href="https://www.tandfonline.com/doi/full/10.1080/17538947.2022.2152882" target="_blank" class="btn btn-outline-primary me-2">Paper</a>
               <a href="bib/deephub.bib" download="deephub.bib" target="_blank" class="btn btn-outline-secondary">Cite</a>
             </div>
@@ -709,16 +713,18 @@
         <img src="images/methanesat.jpg" alt="MethaneSAT Project" class="img-fluid w-100 project-modal-img rounded mb-4" loading="lazy">
         
         <div>
-          <span class="badge bg-primary mb-2">@Harvard Center for Astrophysics - Environmental Defense Fund</span>
+          <span class="badge bg-primary mb-2">@Harvard & Smithsonian Center for Astrophysics - Environmental Defense Fund</span>
           <h4>Advanced ML Algorithms for Methane Monitoring</h4>
           <p class="text-justify">
             Environmental monitoring requires accurate retrieval of methane (CH<sub>4</sub>) concentrations. The MethaneSAT mission, launched in April 2024, aims to bridge the gap between global mapping satellites with low spatial resolution and high-resolution point-source imagers.
             <br><br>
-            Our team developed advanced machine learning algorithms to address one of the most significant challenges in atmospheric methane retrievals: the accurate detection and mitigation of cloud and shadow effects in hyperspectral satellite imagery.
+            Our team developed advanced machine learning algorithms to address a significant challenges in atmospheric methane retrievals: the accurate detection and mitigation of cloud and shadow effects in hyperspectral satellite imagery.
             <br><br>
-            We conducted a comprehensive evaluation of machine learning approaches for cloud and shadow detection in MethaneSAT and MethaneAIR hyperspectral data, comparing traditional methods with advanced deep learning architectures.
+            We propose SCAN, a simple neural networks that computes attention weights and applies them directly to spectral signatures. We conducted a comprehensive evaluation of machine learning approaches for cloud and shadow detection in MethaneSAT and MethaneAIR hyperspectral data, validating SCAN's suitability for atmospheric artifact detection.
             <br><br>
             This research directly supports global methane monitoring efforts by improving the reliability of satellite-based measurements, enabling more accurate identification and quantification of emission sources.
+            <br><br>
+            Accepted to NeurIPS 2025 workshop on tackling climate change with machine learning.
           </p>
           <a href="https://arxiv.org/abs/2509.19665" target="_blank" class="btn btn-outline-primary me-2">Preprint</a>
           <a href="https://doi.org/10.7910/DVN/IKLZOJ" target="_blank" class="btn btn-outline-dark me-2">Data & Code</a>
