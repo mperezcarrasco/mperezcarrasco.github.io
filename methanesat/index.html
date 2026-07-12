@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Machine Learning for MethaneSAT — Cloud, Shadow &amp; Plume Segmentation</title>
+  <meta name="description" content="Machine-learning research from a Postbaccalaureate Fellowship at the Center for Astrophysics | Harvard & Smithsonian: cloud, shadow, and methane plume segmentation for the MethaneSAT and MethaneAIR imaging spectrometers.">
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:title" content="Machine Learning for MethaneSAT">
+  <meta property="og:description" content="Cloud, shadow, and methane plume segmentation for MethaneSAT and MethaneAIR. Center for Astrophysics | Harvard & Smithsonian.">
+  <meta property="og:type" content="article">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1f2328;
+      --body: #33383e;
+      --muted: #6a727b;
+      --line: #e6e8eb;
+      --accent: #004A87;
+      --btn: #363636;
+      --btn-hover: #1a1a1a;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--body);
+      background: #ffffff;
+      line-height: 1.68;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 820px; margin: 0 auto; padding: 0 22px; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ---------- Header ---------- */
+    header.head { padding: 3.4rem 0 1.2rem; text-align: center; border-bottom: 1px solid var(--line); }
+    .venue-line {
+      font-size: .82rem; letter-spacing: .3px; color: var(--muted);
+      text-transform: uppercase; margin-bottom: 1rem; font-weight: 500;
+    }
+    h1.title {
+      font-size: clamp(1.7rem, 4.2vw, 2.35rem);
+      font-weight: 700; color: var(--ink); line-height: 1.22;
+      letter-spacing: -0.4px; margin: 0 auto; max-width: 760px;
+    }
+    .subtitle { font-size: 1.02rem; color: var(--body); margin-top: .9rem; }
+    .affil { font-size: .92rem; color: var(--muted); margin-top: .55rem; }
+    .affil sup { color: var(--accent); }
+
+    /* ---------- Link buttons ---------- */
+    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; margin-top: 1.5rem; }
+    .btn-pill {
+      display: inline-flex; align-items: center; gap: .45rem;
+      background: var(--btn); color: #fff !important;
+      padding: .42rem .95rem; border-radius: 999px;
+      font-size: .84rem; font-weight: 500; transition: background .15s ease;
+    }
+    .btn-pill:hover { background: var(--btn-hover); text-decoration: none; }
+    .btn-pill i { font-size: .82rem; }
+
+    /* ---------- Sections ---------- */
+    main { padding-bottom: 3rem; }
+    section { padding: 2.4rem 0; border-bottom: 1px solid var(--line); }
+    section:last-child { border-bottom: none; }
+    h2 {
+      font-size: 1.4rem; font-weight: 600; color: var(--ink);
+      text-align: center; margin: 0 0 1.4rem; letter-spacing: -0.2px;
+    }
+    h3 { font-size: 1.06rem; font-weight: 600; color: var(--ink); margin: 1.8rem 0 .4rem; }
+    p { margin: 0 0 1rem; }
+    .lead-abstract { color: var(--body); }
+    .muted { color: var(--muted); }
+    strong { color: var(--ink); font-weight: 600; }
+
+    ul.tight { margin: 0 0 1rem; padding-left: 1.25rem; }
+    ul.tight li { margin-bottom: .35rem; }
+
+    /* ---------- Figures ---------- */
+    figure { margin: 1.6rem 0; text-align: center; }
+    figure img { max-width: 100%; border: 1px solid var(--line); border-radius: 4px; }
+    figcaption { color: var(--muted); font-size: .86rem; margin-top: .6rem; line-height: 1.5; }
+    figcaption b { color: var(--body); font-weight: 600; }
+    .fig-placeholder {
+      display: none; flex-direction: column; align-items: center; justify-content: center; gap: .5rem;
+      min-height: 190px; border: 1px dashed #cdd3da; border-radius: 4px;
+      background: #fafbfc; color: var(--muted); font-size: .84rem; padding: 1.5rem;
+    }
+    .fig-placeholder i { font-size: 1.4rem; color: #b3bcc6; }
+    .fig-placeholder code { background: #eef1f4; color: var(--ink); padding: .1rem .35rem; border-radius: 3px; font-size: .82rem; }
+
+    /* ---------- Tables ---------- */
+    .table-wrap { overflow-x: auto; margin: 1.2rem 0; }
+    table { border-collapse: collapse; width: 100%; font-size: .9rem; min-width: 440px; }
+    th, td { padding: .5rem .7rem; text-align: center; border-bottom: 1px solid var(--line); }
+    thead th { border-bottom: 1.5px solid #cdd3da; color: var(--ink); font-weight: 600; }
+    td:first-child, th:first-child { text-align: left; }
+    tr.best td { font-weight: 600; color: var(--ink); }
+    caption { caption-side: bottom; color: var(--muted); font-size: .82rem; margin-top: .6rem; text-align: left; }
+
+    /* ---------- Publication list ---------- */
+    .pub { padding: 1rem 0; border-bottom: 1px solid var(--line); }
+    .pub:last-child { border-bottom: none; }
+    .pub .pub-venue { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; font-weight: 500; }
+    .pub .pub-title { font-weight: 600; color: var(--ink); margin: .15rem 0 .4rem; }
+    .pub .pub-links { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .pub .pub-links a {
+      font-size: .82rem; padding: .18rem .6rem; border: 1px solid var(--line); border-radius: 5px; color: var(--accent);
+    }
+    .pub .pub-links a:hover { background: #f4f7fb; text-decoration: none; }
+
+    /* ---------- BibTeX ---------- */
+    pre.bibtex {
+      background: #f6f8fa; border: 1px solid var(--line); border-radius: 6px;
+      padding: 1rem 1.1rem; overflow-x: auto; font-size: .8rem; line-height: 1.5;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; color: #24292f;
+      margin: 0 0 1.2rem;
+    }
+
+    /* ---------- Footer ---------- */
+    footer { text-align: center; padding: 2.2rem 0; color: var(--muted); font-size: .86rem; }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="head">
+    <div class="container">
+      <div class="venue-line">Postbaccalaureate Fellowship · 2025–2026</div>
+      <h1 class="title">Machine Learning for MethaneSAT:<br>Cloud, Shadow, and Methane Plume Segmentation</h1>
+      <div class="subtitle">Deep learning for the MethaneSAT satellite and its airborne precursor MethaneAIR</div>
+      <div class="affil">
+        AstroAI, Center for Astrophysics | Harvard &amp; Smithsonian &nbsp;·&nbsp; Environmental Defense Fund &nbsp;·&nbsp; Harvard University
+      </div>
+
+      <div class="links">
+        <a class="btn-pill" href="#clouds"><i class="fas fa-cloud"></i> Clouds &amp; Shadows</a>
+        <a class="btn-pill" href="#plumes"><i class="fas fa-smog"></i> Methane Plumes</a>
+        <a class="btn-pill" href="#publications"><i class="fas fa-file-lines"></i> Publications</a>
+        <a class="btn-pill" href="#data"><i class="fas fa-database"></i> Data &amp; Code</a>
+        <a class="btn-pill" href="#bibtex"><i class="fas fa-quote-right"></i> BibTeX</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- Teaser -->
+      <figure>
+        <img src="images/xch4_maps.png" alt="XCH4 maps from MethaneAIR and MethaneSAT" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+        <div class="fig-placeholder"><i class="fas fa-image"></i><span>Image to upload: <code>images/xch4_maps.png</code></span><span>Side-by-side XCH₄ maps: MethaneAIR (10 m) vs. MethaneSAT (45 m)</span></div>
+        <figcaption>The same methane field observed by the airborne (high-resolution) and satellite (basin-scale) imaging spectrometers.</figcaption>
+      </figure>
+
+      <!-- ===== Overview ===== -->
+      <section id="overview">
+        <h2>Overview</h2>
+        <p class="lead-abstract">
+          Methane (CH<sub>4</sub>) traps roughly 80× more heat than CO<sub>2</sub> over its first two
+          decades in the atmosphere, and the oil &amp; gas sector accounts for about a third of human-caused emissions.
+          <strong>MethaneSAT</strong> (launched 2024) was built to quantify these emissions across wide
+          ~220 × 220 km basins, complementing its higher-resolution airborne precursor <strong>MethaneAIR</strong>.
+          Both retrieve column-averaged methane (<em>XCH<sub>4</sub></em>) from hundreds of narrow bands of reflected sunlight.
+        </p>
+        <p>
+          During a Postbaccalaureate Fellowship with AstroAI at the Center for Astrophysics | Harvard &amp; Smithsonian,
+          in collaboration with the Environmental Defense Fund and Harvard University, I built the machine-learning
+          methods needed to make that data usable. The work followed two threads: (1) masking clouds and
+          their shadows, which corrupt the retrieval, and (2) detecting and segmenting the methane
+          plumes that turn the maps into emissions estimates. This page collects the resulting papers, posters, data, and code.
+        </p>
+      </section>
+
+      <!-- ===== Thread 1 ===== -->
+      <section id="clouds">
+        <h2>Cloud &amp; Shadow Segmentation</h2>
+        <p>
+          Clouds hide the surface and shadows starve it of light, biasing the methane retrieval; both must be masked
+          before the data can be trusted. Conventional cloud detection treats every wavelength equally, ignoring the
+          rich spectral structure of hyperspectral imagery, where clouds, shadows, and dark surfaces each leave a
+          distinctive fingerprint across the bands.
+        </p>
+        <p>
+          We introduced <strong>SCAN</strong> (Spectral Channel Attention Network), which applies channel-wise
+          attention directly to the <em>physical spectral bands</em> rather than to spatial feature maps: it averages
+          the spectrum over a scene, learns a weight for every wavelength, and re-emphasizes the most discriminative
+          bands before classifying each pixel as background, cloud, or shadow. It is a small, fast model built specifically for spectral data.
+        </p>
+
+        <figure>
+          <img src="images/scan_architecture.png" alt="SCAN architecture diagram" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="fig-placeholder"><i class="fas fa-image"></i><span>Image to upload: <code>images/scan_architecture.png</code></span><span>SCAN schematic (Fig. 3 of the NeurIPS paper)</span></div>
+          <figcaption>SCAN learns attention weights over wavelengths and applies them to each pixel's spectral signature.</figcaption>
+        </figure>
+
+        <p>
+          Across six models benchmarked per sensor, two results stand out. SCAN's spectral attention pays off most on
+          the satellite data, where it surpasses U-Net (particularly on shadows and dark surfaces),
+          while U-Net better captures cloud shape. The two are strongest combined: a lightweight ensemble, the
+          <strong>Combined CNN</strong>, wins on both sensors at under 0.2M parameters and roughly 4 ms of inference per
+          1,000 km².
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Macro-averaged F1 (%), mean over 3-fold cross-validation. SCAN beats U-Net on the satellite; the ensemble wins on both.</caption>
+            <thead>
+              <tr><th>Model</th><th>MethaneAIR F1</th><th>MethaneSAT F1</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ILR (baseline)</td><td>62.1</td><td>64.4</td></tr>
+              <tr><td>MLP</td><td>71.3</td><td>67.1</td></tr>
+              <tr><td>U-Net</td><td>76.2</td><td>68.6</td></tr>
+              <tr><td>SCAN</td><td>75.0</td><td>71.5</td></tr>
+              <tr class="best"><td>Combined CNN</td><td>78.5</td><td>78.8</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="muted" style="font-size:.9rem;">
+          Published in <strong>IEEE TGRS (2026)</strong>; the SCAN method was presented at the
+          <strong>NeurIPS 2025 workshop on Tackling Climate Change with ML</strong>.
+        </p>
+      </section>
+
+      <!-- ===== Thread 2 ===== -->
+      <section id="plumes">
+        <h2>Methane Plume Segmentation</h2>
+        <p>
+          With clean maps in hand, the second thread outlined individual plumes so each can be attributed to a source
+          and quantified. This became urgent when MethaneSAT lost contact in 2025, ending the mission
+          early. The goal shifted to extracting maximum value from the ~14 months of data already collected, which
+          required automating detection across the full archive. The obstacle: only 27 satellite scenes
+          carried validated plume labels, far too few to train a modern model from scratch. We addressed this with two ideas.
+        </p>
+
+        <h3>1 &nbsp;·&nbsp; Cross-sensor transfer learning</h3>
+        <p>
+          Because MethaneAIR and MethaneSAT share the same retrieval physics, plume shapes look alike across them despite
+          the resolution gap. We pre-trained an instance-segmentation model
+          (Mask R-CNN with a ResNet-50 backbone, which beat U-Net and transformer variants) on the
+          data-rich airborne scenes, then adapted it to the satellite. Of the strategies tried (joint training,
+          curriculum learning, and fine-tuning), fine-tuning won, raising scene-level F1 from 0.35
+          (satellite-only) to 0.74 with essentially no missed plumes.
+        </p>
+
+        <h3>2 &nbsp;·&nbsp; Physics-informed postprocessing</h3>
+        <p>
+          Raw detections contain artifacts, and different users need different things. Physics-aware cleanup exposes
+          two operating modes from the same model: a high-sensitivity mode
+          (morphological shape filtering and proximity merging) that catches almost everything, and a
+          high-precision mode (a statistical false-plume classifier over each mask's methane and albedo
+          distribution) that suppresses nearly all false positives.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Scene-level performance on MethaneSAT (fine-tuned Mask R-CNN, ResNet-50 backbone).</caption>
+            <thead>
+              <tr><th>Operating mode</th><th>Precision</th><th>Recall</th><th>F1</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Baseline</td><td>0.60</td><td>0.98</td><td>0.74</td></tr>
+              <tr class="best"><td>High sensitivity</td><td>0.71</td><td>0.94</td><td>0.81</td></tr>
+              <tr><td>High precision</td><td>0.92</td><td>0.70</td><td>0.79</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure>
+          <img src="images/plume_pipeline.png" alt="Plume segmentation pipeline" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          <div class="fig-placeholder"><i class="fas fa-image"></i><span>Image to upload: <code>images/plume_pipeline.png</code></span><span>Five-step pipeline (Fig. 3 of the preprint)</span></div>
+          <figcaption>End-to-end pipeline: input XCH₄ → patches → cross-sensor transfer → inference and postprocessing → output.</figcaption>
+        </figure>
+
+        <p class="muted" style="font-size:.9rem;">
+          Available as a <strong>preprint (2026, submitted to IEEE TGRS)</strong>; presented as posters at
+          <strong>AGU 2025</strong> and the <strong>AstroAI 2026 workshop</strong>.
+        </p>
+      </section>
+
+      <!-- ===== Publications ===== -->
+      <section id="publications">
+        <h2>Publications &amp; Posters</h2>
+
+        <div class="pub">
+          <div class="pub-venue">Journal · IEEE TGRS 2026</div>
+          <div class="pub-title">Deep Learning for Clouds and Cloud Shadow Segmentation in Methane Satellite and Airborne Imaging Spectroscopy</div>
+          <div class="pub-links">
+            <a href="https://ieeexplore.ieee.org/abstract/document/11426920" target="_blank">IEEE</a>
+            <a href="https://arxiv.org/abs/2509.19665" target="_blank">arXiv</a>
+            <a href="https://doi.org/10.7910/DVN/IKLZOJ" target="_blank">Data &amp; Code</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-venue">Preprint · submitted to IEEE TGRS</div>
+          <div class="pub-title">Plume Segmentation from MethaneSAT with Cross-Sensor Transfer Learning and Physics-Informed Postprocessing</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/abs/2605.24273" target="_blank">arXiv</a>
+            <a href="https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/FR959H" target="_blank">Data &amp; Code</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-venue">Workshop paper &amp; poster · NeurIPS 2025 (Tackling Climate Change with ML)</div>
+          <div class="pub-title">Spectral Channel Attention Network: A Method for Hyperspectral Semantic Segmentation of Cloud and Shadows</div>
+          <div class="pub-links">
+            <a href="https://ccai-papers.s3.us-east-1.amazonaws.com/neurips2025/38/paper.pdf" target="_blank">Paper</a>
+            <a href="https://ccai-papers.s3.us-east-1.amazonaws.com/neurips2025/38/poster.pdf" target="_blank">Poster</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-venue">Poster · AGU 2025</div>
+          <div class="pub-title">Deep Learning for Clouds, Cloud Shadow and Methane Plume Segmentation in Methane Satellite and Airborne Imaging Spectroscopy</div>
+          <div class="pub-links">
+            <a href="assets/AGU2025_poster.pdf" target="_blank">Poster PDF</a>
+          </div>
+        </div>
+
+        <div class="pub">
+          <div class="pub-venue">Poster · AstroAI 2026 Workshop</div>
+          <div class="pub-title">Plume Segmentation from MethaneSAT</div>
+          <div class="pub-links">
+            <a href="assets/AstroAI2026_plume_poster.pdf" target="_blank">Poster PDF</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Data & Code ===== -->
+      <section id="data">
+        <h2>Data &amp; Code</h2>
+        <p>
+          Both projects are fully reproducible. Labeled hyperspectral imagery, trained model checkpoints, and the
+          complete training and inference pipelines are released openly on Harvard Dataverse.
+        </p>
+        <ul class="tight">
+          <li><strong>Cloud &amp; shadow segmentation.</strong> Imagery, checkpoints, and code (ILR, MLP, U-Net, SCAN, ensembles) with containerized reproducibility: <a href="https://doi.org/10.7910/DVN/IKLZOJ" target="_blank">doi:10.7910/DVN/IKLZOJ</a></li>
+          <li><strong>Plume segmentation.</strong> XCH₄ imagery, Mask R-CNN and transfer-learning pipelines, physics-informed postprocessing, and the trained false-plume classifier: <a href="https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/FR959H" target="_blank">doi:10.7910/DVN/FR959H</a></li>
+        </ul>
+      </section>
+
+      <!-- ===== BibTeX ===== -->
+      <section id="bibtex">
+        <h2>BibTeX</h2>
+        <pre class="bibtex">@article{perezcarrasco2026clouds,
+  title   = {Deep Learning for Clouds and Cloud Shadow Segmentation in
+             Methane Satellite and Airborne Imaging Spectroscopy},
+  author  = {P{\'e}rez-Carrasco, Manuel and Nasr, Maya and Roche, S{\'e}bastien
+             and Chan Miller, Chris and Zhang, Zhan and Park, Core Francisco
+             and Walker, Eleanor and Garraffo, Cecilia and Finkbeiner, Douglas
+             and others},
+  journal = {IEEE Transactions on Geoscience and Remote Sensing},
+  year    = {2026},
+  note    = {arXiv:2509.19665},
+  doi     = {10.7910/DVN/IKLZOJ}
+}
+
+@article{perezcarrasco2026plumes,
+  title   = {Plume Segmentation from MethaneSAT with Cross-Sensor Transfer
+             Learning and Physics-Informed Postprocessing},
+  author  = {P{\'e}rez-Carrasco, Manuel and Nasr, Maya and Zhang, Zhan
+             and Chulakadabba, Apisada and Roger, Javier and Ottenheimer, Raia
+             and Roche, S{\'e}bastien and Garraffo, Cecilia and Liu, Xiong
+             and Gautam, Ritesh and Wofsy, Steven and others},
+  journal = {arXiv preprint arXiv:2605.24273},
+  year    = {2026}
+}</pre>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <strong style="color:var(--ink);">Manuel Pérez-Carrasco</strong> · Postbaccalaureate Fellow, AstroAI · Center for Astrophysics | Harvard &amp; Smithsonian<br>
+        <a href="mailto:ma.ignacioperezc@gmail.com">ma.ignacioperezc@gmail.com</a>
+        &nbsp;·&nbsp; <a href="https://github.com/mperezcarrasco" target="_blank">GitHub</a>
+        &nbsp;·&nbsp; <a href="https://mperezcarrasco.github.io/" target="_blank">Portfolio</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
